@@ -1,3 +1,10 @@
 {
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.xacro": "xml",
+    "cmath": "cpp",
+    "complex": "cpp",
+    "ostream": "cpp",
+    "iostream": "cpp"
+  }
 }
