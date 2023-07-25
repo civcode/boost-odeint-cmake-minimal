@@ -21,13 +21,21 @@ endif()
 
 include_directories(
   ${Boost_INCLUDE_DIRS}
+  ${CMAKE_SOURCE_DIR}/lib/tic-toc-timer/include
 )
 
 set(SRC
   #${CMAKE_SOURCE_DIR}/src/lorenz.cpp
 )
 
+set(timer_SRC
+  ${CMAKE_SOURCE_DIR}/lib/tic-toc-timer/src/tic_toc_timer.cpp
+)
+
+add_library(tictoctimer ${timer_SRC})
+
+
 add_executable(odeint src/lorenz.cpp)
-target_link_libraries(odeint ${Boost_LIBRARIES})
+target_link_libraries(odeint ${Boost_LIBRARIES} tictoctimer)
 
 
