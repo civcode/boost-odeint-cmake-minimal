@@ -92,11 +92,13 @@ int main(int argc, char **argv)
   //size_t step_count = integrate_adaptive(rk4(), model, x, 0.0, 5.0, 0.01, write_lorenz);
   //size_t step_count = integrate_adaptive(rk4(), model, x, 0.0, 5.0, 0.01, write_lorenz);
   //size_t step_count = integrate_adaptive(ctrl_rkck54(), model, x, 0.0, 5.0, 0.01, write_lorenz);
-  step_count = integrate_adaptive(rk4(), model, x, 0.0, 1.0, 0.001, write_lorenz);
-  cout << "time expired: " << timer.toc().ms().to_string() << endl;
-  cout << "step count:   " << step_count << endl;
+
+  // step_count = integrate_adaptive(rk4(), model, x, 0.0, 1.0, 0.001, write_lorenz);
+  // cout << "time expired: " << timer.toc().ms().to_string() << endl;
+  // cout << "step count:   " << step_count << endl;
+
   timer.tic();
-  step_count = integrate_adaptive(ctrl_rkck54(), model, y, 0.0, 1.0, 0.001, write_lorenz);
+  step_count = integrate_adaptive(ctrl_rkck54(), model, y, 0.0, 0.1, 0.001, write_lorenz);
   //cout << "time expired: " << timer.toc().ms().value() << endl;
   cout << "time expired: " << timer.toc().ms().to_string() << endl;
   cout << "step count:   " << step_count << endl;

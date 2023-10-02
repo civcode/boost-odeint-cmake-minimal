@@ -39,3 +39,5 @@ add_executable(odeint src/lorenz.cpp)
 target_link_libraries(odeint ${Boost_LIBRARIES} tictoctimer)
 
 
+add_executable(oscillator src/oscillator.cpp)
+target_link_libraries(oscillator ${Boost_LIBRARIES} tictoctimer)
